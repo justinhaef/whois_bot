@@ -27,7 +27,7 @@ Create a folder, name it whatever you'd like.
 5. `cd TeamsBot`
 6. `git clone https://github.com/justinhaef/whois_bot.git`
 
-Next, once you've cloned this repo and you've set it up in a virtual environment, run `pip install -r requirements.txt`.  
+Next, once you've cloned this repo and you've set it up in a virtual environment, run `pip3 install -r requirements.txt`.  
 
 ## You've got a little work to do
 
