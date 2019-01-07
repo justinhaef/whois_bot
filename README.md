@@ -95,6 +95,8 @@ Now you need to go to Webex Teams and create your bot's webhook.
 
 Just follow [this link](https://developer.webex.com/docs/api/v1/webhooks/create-a-webhook) and enter in the bot access token you got when you created it.  Enter the URL from above in the `targetUrl` field.  Then for the the simplest config, for both event and resource enter `all`.  __Be sure to change the `Authorization` toggle switch to off, so it doesn't use your personal token.__
 
+Also [__UPDATE LINE #10 in app.py__](https://github.com/justinhaef/whois_bot/blob/075d3e5a5fef564dca6bbd80cdbcc9b83bf19060/app.py#L10), if you fail to do this you'll create a messaging loop!
+
 ## Finish
 
-Once that is all done, you should have a working Webex Teams Bot hosted in AWS.  
+Once that is all done, you should have a working Webex Teams Bot hosted in AWS.  Every time you want to update your bot, make the changes in VS Code, save and upload using the `chalice deploy` command.  
