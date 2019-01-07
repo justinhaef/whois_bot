@@ -11,16 +11,29 @@ Good Resources for reference:
 
 ## Clone this repo
 
-Be sure you use Python 3.6, can't use 3.7 as per AWS.  
+~~Be sure you use Python 3.6, can't use 3.7 as per AWS~~ Update - You can use 3.7 which is installed by default by HomeBrew, you just get warnings from the Chalice commands. 
+You might need this command first `xcode-select --install` for mac users.
+I also recommend you download [Microsoft VS Code](https://code.visualstudio.com)
 Use [this guide](https://docs.python-guide.org/starting/install3/osx/) to install Homebrew and Pip. 
-Next use [this guide](https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv) to install a virtual environment.  
+Next use [this guide](https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv) to install a virtual environment. (Optional)
+
+Create an AWS Chalice project
+
+Create a folder, name it whatever you'd like.  
+1. `mkdir TeamsBot`
+2. `cd TeamsBot`
+3. `pip3 install chalice`
+4. `chalice new-project TeamsBot`
+5. `cd TeamsBot`
+6. `git clone https://github.com/justinhaef/whois_bot.git`
+
 Next, once you've cloned this repo and you've set it up in a virtual environment, run `pip install -r requirements.txt`.  
 
 ## You've got a little work to do
 
 You need to create an AWS account, yes you'll need your credit card but don't worry, odds are you won't be charged a thing as the AWS free tier is amazing. 
 
-You need to setup a file in your home directory, `.aws/config` and `.aws/credentials`.  
+You need to setup a file in your *home directory*, `.aws/config` and `.aws/credentials`.  
 
 
 ./aws/config
@@ -39,14 +52,14 @@ aws_access_key_id = ---AWS KEY---
 aws_secret_access_key = ---AWS SECRET---
 ```
 
-Also under `.chalice/config.json` you'll need to add the following for the Webex Teams. 
+Also under your project's folder, *not your home directory* `.chalice/config.json` you'll need to add the following for the Webex Teams. 
 
 config.json
 
 ```json
 {
   "version": "2.0",
-  "app_name": "whois_bot",
+  "app_name": "TeamsBot",
   "stages": {
     "dev": {
       "api_gateway_stage": "api",
